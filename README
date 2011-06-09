@@ -7,7 +7,7 @@ HTML5 Boilerplate
 
 
 INITIAL USE: 
-Staff retreat, no internet access, Engage served up from a laptop on a wireless network... all staff had laptops. The goal was to have a way for a presenter/moderator to pose discussion questions and/or polls on screen to a known/trusted audience w/ laptops. There was no need for authentication/authorization. Every comment submitted was entered into the database and added to the stream of comments visible to the attendees.
+Staff retreat, no internet access, Engage served up from a laptop on a wireless network... all staff had laptops. The goal was to have a way for a presenter/moderator to pose discussion questions and/or polls on screen to a known/trusted audience w/ laptops. The presenter could then guide discussion based on the live feedback. There was no need for authentication/authorization. Every comment submitted was entered into the database and added to the stream of comments visible to the attendees.
 
 
 WHAT WORKS NOW:
