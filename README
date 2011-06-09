@@ -21,4 +21,5 @@ FUTURE:
 - Threaded comments / replies in the stream
 - Allow flexible number of poll answers
 - Allow multiple choice for poll answers
+- Mobile-friendly interface (target full compat. w/ Android and iOS devices)
 ...
