@@ -1,0 +1,821 @@
+/**
+ * HTML5 ✰ Boilerplate
+ *
+ * style.css contains a reset, font normalization and some base styles.
+ *
+ * Credit is left where credit is due.
+ * Much inspiration was taken from these projects:
+ * - yui.yahooapis.com/2.8.1/build/base/base.css
+ * - camendesign.com/design/
+ * - praegnanz.de/weblog/htmlcssjs-kickstart
+ */
+
+
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, div {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+
+/**
+ * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
+ */
+
+body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+select, input, textarea, button { font:99% sans-serif; }
+
+/* Normalize monospace sizing:
+   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+
+/**
+ * Minimal base styles.
+ */
+
+/* Always force a scrollbar in non-IE */
+html { overflow-y: scroll; }
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+td { vertical-align: top; }
+
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre {
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+  padding: 15px;
+}
+
+textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+
+/* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* Colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid {
+   border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+/* These selection declarations have to be separate
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink! */
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+
+/* j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+/* Make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+
+/* Bicubic resizing for non-native sized IMG:
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/**
+ * You might tweak these..
+ */
+
+body, select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #444;
+  /* Set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */
+}
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+
+
+/**
+ * Primary styles
+ *
+ * Author: @bfco-orange: #ca3b14;
+ */
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on May 1, 2011 */
+@font-face {
+    font-family: 'OswaldRegular';
+    src: url('oswald-webfont.eot');
+    src: url('oswald-webfont.eot?#iefix') format('embedded-opentype'),
+         url('oswald-webfont.woff') format('woff'),
+         url('oswald-webfont.ttf') format('truetype'),
+         url('oswald-webfont.svg#OswaldRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSansBold';
+    src: url('pt_sans-web-bold-webfont.eot');
+    src: url('pt_sans-web-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pt_sans-web-bold-webfont.woff') format('woff'),
+         url('pt_sans-web-bold-webfont.ttf') format('truetype'),
+         url('pt_sans-web-bold-webfont.svg#PTSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSansBoldItalic';
+    src: url('pt_sans-web-bolditalic-webfont.eot');
+    src: url('pt_sans-web-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pt_sans-web-bolditalic-webfont.woff') format('woff'),
+         url('pt_sans-web-bolditalic-webfont.ttf') format('truetype'),
+         url('pt_sans-web-bolditalic-webfont.svg#PTSansBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSansItalic';
+    src: url('pt_sans-web-italic-webfont.eot');
+    src: url('pt_sans-web-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pt_sans-web-italic-webfont.woff') format('woff'),
+         url('pt_sans-web-italic-webfont.ttf') format('truetype'),
+         url('pt_sans-web-italic-webfont.svg#PTSansItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSansRegular';
+    src: url('pt_sans-web-regular-webfont.eot');
+    src: url('pt_sans-web-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pt_sans-web-regular-webfont.woff') format('woff'),
+         url('pt_sans-web-regular-webfont.ttf') format('truetype'),
+         url('pt_sans-web-regular-webfont.svg#PTSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+@font-face {
+    font-family: 'CoveredByYourGraceRegular';
+    src: url('coveredbyyourgrace-webfont.eot');
+    src: url('coveredbyyourgrace-webfont.eot?#iefix') format('embedded-opentype'),
+         url('coveredbyyourgrace-webfont.woff') format('woff'),
+         url('coveredbyyourgrace-webfont.ttf') format('truetype'),
+         url('coveredbyyourgrace-webfont.svg#CoveredByYourGraceRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+@font-face {
+    font-family: 'MarkerFeltRegular';
+    src: url('markerfelt-webfont.eot');
+    src: url('markerfelt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('markerfelt-webfont.woff') format('woff'),
+         url('markerfelt-webfont.ttf') format('truetype'),
+         url('markerfelt-webfont.svg#MarkerFeltRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  background: #3e3e3e url(../img/bg_grey.png) repeat-x top;
+  font-family: 'PTSansRegular', Calibri, Arial, sans-serif;
+}
+
+h1, h2, h3, p.question {
+  font-family: 'OswaldRegular', Helvetica, Arial, sans-serif;
+}
+
+header {
+  margin: 0;
+  padding: 10px;
+  background: #fff url(../img/logo.png) no-repeat 10px 10px;
+  text-align: right;
+  border-bottom: 3px solid #ca3b14;
+  -moz-box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+header h1 {
+  line-height: 62px;
+  font-size: 24px;
+  
+}
+
+header a {
+  color: #444;
+  text-decoration: none;
+  
+}
+header a:hover {
+  color: #444;
+  text-decoration: underline;
+}
+
+footer {
+  margin: 0;
+  padding: 20px;
+  background: #222;
+  color: #444;
+  text-align: center;
+  border-top: 3px solid #ca3b14;
+  /* -moz-box-shadow: 2px 0 5px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 2px 0 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 2px 0 5px 5px rgba(0,0,0,0.5); */
+  
+}
+footer p {
+  font-style: italic;
+}
+
+
+#container {
+  max-width: 1280px;
+  min-width: 960px;
+  clear: both;
+  margin: 0 auto;
+}
+#main {
+  float: left;
+  width: 100%;
+  margin: 0 -320px 0 0;
+
+}
+div.clear {
+  clear: both;
+}
+div.content {
+  min-height: 300px;
+  height: auto !important;
+  height: 300px;
+  
+  background-color: rgba(255,255,255,0.8);
+  border: 2px solid #666;
+  margin-right: 320px;
+  padding-bottom: 20px;
+}
+html.ie8 div.content,
+html.ie7 div.content,
+html.ie6 div.content,
+html.ie8 div.side,
+html.ie7 div.side,
+html.ie6 div.side {background: #eee;}
+
+div.side {
+  float: right;
+  width: 23.2%;
+  min-width: 296px;
+  background-color: rgba(255,255,255,0.7);
+  border: 2px solid #666;
+  padding-bottom: 20px;
+}
+div.testframe {
+  background-color: Aqua;
+}
+
+
+
+#topic-head {
+  width: 100%;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2,
+#topic-head a, 
+#topic-head a:link, 
+#topic-head a:visited,
+#topic-head a:hover, 
+#topic-head a:active, 
+#topic-head a:focus {
+  font-size: 48px;
+  color: #eee;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  text-transform: small-caps;
+  margin: 0;
+  padding: 10px 0 10px 0;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 30px;
+  margin-bottom: 10px;
+  padding: 5px 10px 5px 10px;
+  /*color: #333;*/
+  text-shadow: 1px 1px 0 #fff;
+  border-bottom: 1px solid rgba(51,153,255,0.6);
+}
+html.ie6 h3,
+html.ie7 h3,
+html.ie8 h3 {border-bottom: 1px solid rgb(51,153,255);}
+
+a.navright {
+  float: right;
+  padding: 4px 4px;
+}
+a.navright:link,
+a.navright:visited {
+  font-size: 12px;
+  color: #ccc;
+  
+}
+a.navright:hover,
+a.navright:active,
+a.navright:focus {
+  color: rgba(51,153,255,0.7);
+  text-decoration: underline;
+}
+
+ul.tools a {
+  text-decoration: none;
+}
+div.icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+div.icon img {
+  margin: 0 auto;
+  
+}
+
+
+
+p {
+  margin-bottom: 10px;
+  padding: 0 10px 0 10px;
+  line-height: 1.3em;
+}
+
+p.question {
+  font-size: 3.3em;
+  text-shadow: 1px 2px 0 rgba(51,153,255,0.6);
+}
+.fail {
+  font-weight: bold;
+  color: #c00;
+}
+.empty {
+  font-style: italic;
+}
+.medium {
+  font-size: 1.5em;
+}
+.large {
+  font-size: 3em;
+}
+.center {
+  text-align: center;
+}
+
+.vader {
+  display: none;
+}
+.ak {
+  border-bottom: 1px dotted #eee;
+}
+.vote-total {
+  font-size: .7em;
+  float: right;
+}
+
+
+a,
+a:link,
+a:visited {
+  color: rgba(0,0,51,0.7);
+}
+a:hover, 
+a:active, 
+a:focus {
+  color: rgba(0,0,102,0.9);
+  outline: none;
+}
+
+.content .subnav {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.content ul {
+  list-style: none;
+  margin-top: 10px;
+}
+div#topic-list ul {
+  margin-top: 20px;
+}
+div#topic-list li {
+  font-family: 'OswaldRegular', Helvetica, Calibri, Arial, sans-serif;
+  /* font-size: 3em; */
+  /*line-height: 1.6em;*/
+  margin: 0 0 20px 0;
+}
+div#topic-list a,
+div#topic-list a:link,
+div#topic-list a:visited {
+  /*color: #eee;*/
+}
+div#topic-list a:hover,
+div#topic-list a:active,
+div#topic-list a:focus {
+  color: #ca3b14;
+}
+
+.awesome {
+  background: url(../img/alert-overlay.png) repeat-x;
+  display: inline-block;
+  /* padding: 8px 20px 10px; */
+  /* color: #fff; */
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select:none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.small.awesome {
+  font-size: 12px;
+  padding: 3px 9px 5px;
+}
+.medium.awesome {
+  font-size: 18px;
+  padding: 6px 15px 8px;
+}
+.large.awesome {
+  font-size: 48px;
+  padding: 8px 20px 12px;
+}
+
+.light.awesome {
+  color: #444;
+  background-color: #999;
+}
+.dark.awesome {
+  color: #ddd;
+  background-color: #222;
+}
+.dark.awesome:hover {
+  color: #fff;
+}
+
+button::-moz-focus-inner {padding:0;}
+input.awesome { border:0px; }
+
+
+
+ul.counts {
+  width: 80%;
+  margin: 20px auto 30px auto;
+/*  padding: 0 10px; */
+  color: #222;
+  text-shadow: 1px 2px 0 rgba(255,255,255,0.8);
+}
+.side ul {
+  margin: 0 0 30px 0;
+  padding: 10px;
+  list-style: none;
+  text-shadow: none;
+}
+ul.counts li {
+  font-size: 4em;
+  margin-bottom: 10px;
+}
+.side ul li {
+  font-size: 1.5em;
+  margin: 0 0 5px 0;
+
+}
+.side ul li li {
+  font-family: 'OswaldRegular';
+  font-size: 1.2em;
+  text-shadow: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.side .resnum {
+  font-size: 1.6em;
+}
+ul span.zero {
+  color: rgba(51,51,51,0.5);
+  text-shadow: none;
+}
+
+#poll-pane {}
+
+#discussion-pane {}
+
+div#jqmsgs {
+  margin: 20px 0 0 0;
+}
+div#update {
+  margin-bottom: 20px;
+}
+div.message {
+  margin: 0 10px 10px 10px;
+  background-color: rgba(255,255,153,0.9);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+html.ie6 div.message,
+html.ie7 div.message,
+html.ie8 div.message {background: rgb(255,255,153);}
+
+
+div.message p {
+  font-family: 'MarkerFeltRegular', Calibri, Arial, sans-serif;
+  font-size: 2.6em;
+  padding: 10px 20px;
+  color: #333;
+}
+div.message .meta {
+  font-family: Consolas, Courier, fixed;
+  font-size: 10px;
+  
+}
+
+
+
+
+#message-list {
+  font-family: 'OswaldRegular', Helvetica, Arial, sans-serif;
+  margin: 10px 0 30px 0;
+  padding: 20px;
+  border: none;
+  text-align: center;
+}
+
+#message-list ul {
+  list-style: none;
+  
+}
+
+#message-list li:nth-child(1) {
+  font-size: 4em;
+  font-weight: bold;
+  color: #fff;
+  margin: 80px 0 80px 0;
+  text-shadow: 0px 0px 5px rgba(255,153,0,0.9), 5px 5px 6px rgba(51,51,51,0.8);
+}
+
+#message-list li:nth-child(2) {
+  font-size: 2.8em;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 40px 0;
+  text-shadow: 0px 0px 2px rgba(102,102,102,0.8);
+}
+
+#message-list li {
+  margin: 20px 0 0 0;
+  padding: 10px;
+  font-size: 2em;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 5px 0;
+  line-height: 1.3em;
+  background-color: rgba(0,0,0,0.3);
+}
+
+
+/* FORM STYLES */
+.form-container {
+  margin: 10px 0 20px 0;
+  width: 100%;
+  
+}
+
+form {
+  padding: 10px;
+}
+fieldset {
+  border: 1px solid rgba(51,153,255,0.6);
+  -moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+legend {
+  padding: 0 5px 0 5px;
+  font-style: italic;
+}
+div.fieldgroup {
+  margin: 0 0 20px 0;
+}
+label {
+  vertical-align: top;
+}
+
+div.radio-container {
+  margin: 10px 0 20px 0;
+}
+input[type=radio] {
+  margin-left: 20px;
+  height: 30px;
+  width: 20px;
+  
+}
+.radio-container label {
+  font-size: 18px;
+  line-height: 30px;
+}
+textarea, input[type=text], select {
+  font-size: 1.4em;
+}
+textarea#qry {
+  font-size: 18px;
+  padding: 5px;
+  background-color: rgba(255,255,255,0.5);
+  border: 1px solid #666;
+}
+
+/* Extra Input Field Styling */
+textarea, input[type= text], select {
+  padding: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #cecece;
+  outline: none;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset, 0 1px 0 rgba(255,255,255,0.2);
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25 ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+}
+textarea:hover, input[type=text]:hover, select:hover {
+  border: 1px solid #bdbdbd;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2) inset, 0 1px 0 rgba(255,255,255,0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2) inset, 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) inset, 0 1px 0 rgba(255,255,255,0.2);
+}
+textarea:focus, input[type=text]:focus, select:focus {
+  border: 1px solid #95bdd4;
+  background-color: #ffc;
+  -webkit-box-shadow: 0 2px 3px rgba(161,202,226,0.5) inset, 0 1px 0 rgba(255,255,255,0.2);
+  -moz-box-shadow: 0 2px 3px rgba(161,202,226,0.5) inset, 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 2px 3px rgba(161,202,226,0.5) inset, 0 1px 0 rgba(255,255,255,0.2);
+}
+
+
+
+
+/**
+ * Non-semantic helper classes: please define your styles before this section.
+ */
+
+/* For image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+
+
+/**
+ * Media queries for responsive design.
+ *
+ * These follow after primary styles so they will successfully override.
+ */
+
+@media all and (orientation:portrait) {
+  /* Style adjustments for portrait mode goes here */
+
+}
+
+@media all and (orientation:landscape) {
+  /* Style adjustments for landscape mode goes here */
+
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
+   consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+  max-width: 480px;
+  min-width: 320px;
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
+  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+/**
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
+
