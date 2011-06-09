@@ -1,0 +1,24 @@
+Engage is a self-hosted webapp enabling collaborative presentations via live audience feedback and voting.
+
+Credit where credit is due:
+Thanks to Glyphish.com for fantastic icons,
+Google Fonts,
+HTML5 Boilerplate
+
+
+INITIAL USE: 
+Staff retreat, no internet access, Engage served up from a laptop on a wireless network... all staff had laptops. The goal was to have a way for a presenter/moderator to pose discussion questions and/or polls on screen to a known/trusted audience w/ laptops. There was no need for authentication/authorization. Every comment submitted was entered into the database and added to the stream of comments visible to the attendees.
+
+
+WHAT WORKS NOW:
+- Create Topic (messages/comments are associated with a topic)
+- Create Poll (answers can be custom strings, but limited to 3, and not multiple choice)
+
+
+FUTURE: 
+- Convert from straight CSS to LESS.js?
+- There should probably be some authentication/authorization added down the road so that Topic and Poll creation can be restricted to a moderator or assistant.
+- Threaded comments / replies in the stream
+- Allow flexible number of poll answers
+- Allow multiple choice for poll answers
+...
