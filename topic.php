@@ -151,7 +151,7 @@ include('_top.php');
             success: function(html) {
               $("#fcomment").val("");
               $("div#update").prepend(html);
-              $("div#update div.message:first").fadeIn("slow");
+              $("div#update div.message:first").fadeIn("fast");
               $("#flash").hide();
             }
           });
