@@ -153,10 +153,14 @@ $currentpage = "Topic: ".$row_rsTopic['name'];
   <script type="text/javascript" >
     $(function() {
     
+      // update message list every 2 seconds
       setInterval(function() {
-        $("#update").load(location.href+" #update>*","");
-        $("#topic-polls").load(location.href+" #topic-polls>*","");
+        $("#update").load(location.href+"&t="+1*new Date()+" #update>*","");
       }, 2000);
+      // update poll results every 5 seconds
+      setInterval(function() {
+        $("#topic-polls").load(location.href+"&t="+1*new Date()+" #topic-polls>*","");
+      }, 5000);
       
     });
   </script>

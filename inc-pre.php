@@ -3,17 +3,25 @@
 ini_set('display_errors', 1); 
 error_reporting(E_ALL);
 
-// MySQL connection
+
+
+
+/* -- MySQL connection
+      modify values below to reflect your setup -- */
 $hostname_cn = "localhost";
 $database_cn = "engagedb";
 $username_cn = "presentadmin";
 $password_cn = "herE843";
-$cn = mysql_pconnect($hostname_cn, $username_cn, $password_cn) or trigger_error(mysql_error(),E_USER_ERROR);
 
+$sitetitle = "Company Management Retreat";
+/* -- STOP EDITING -- */
+
+
+
+
+$cn = mysql_pconnect($hostname_cn, $username_cn, $password_cn) or trigger_error(mysql_error(),E_USER_ERROR);
 mysql_select_db($database_cn, $cn);
 
-// Options/Setup
-$sitetitle = "Company Management Retreat";
 
 // clean input from forms
 if (!function_exists("GetSQLValueString")) {
@@ -51,6 +59,7 @@ function isZero($val) {
   }
 }
 
+
 function getTopics() {
   $rsTopics = mysql_query("SELECT * FROM ttopics ORDER BY id");
   echo "<h3>Topics</h3>";
@@ -60,6 +69,7 @@ function getTopics() {
   }
   echo "</ul>";
 }
+
 
 function getPollResults($pollID) {
   $qAns = "SELECT id AS ansid FROM tanswers WHERE pid='".$pollID."'";
@@ -111,7 +121,6 @@ function getPollResults($pollID) {
 }
 
 
-
 function getPolls($topicID) {
   $qry = "SELECT pid, question FROM tpolls WHERE tid = ".$topicID." ORDER BY pid DESC";
   $result = mysql_query($qry);
@@ -122,11 +131,5 @@ function getPolls($topicID) {
     echo "</li>";
   }
 }
-
-
-
-
-
-
 
 ?>

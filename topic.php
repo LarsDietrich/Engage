@@ -53,10 +53,7 @@ include('_top.php');
 
             <div id="flash"></div>
             <div id="update" class="timeline">
-            <?php
-            //include('config.php');
-            //$post_id value comes from the POSTS table
-            $sql=mysql_query("SELECT * FROM tmessages WHERE tid='$colname_rsTopic' ORDER BY id DESC");
+            <?php $sql=mysql_query("SELECT * FROM tmessages WHERE tid='$colname_rsTopic' ORDER BY id DESC");
             while ($row=mysql_fetch_array($sql)) { $comment_dis=$row['msg']; ?>
               <div class="message">
                 <p><?php echo $comment_dis; ?></p>
@@ -123,10 +120,14 @@ include('_top.php');
   <script type="text/javascript" >
     $(function() {
     
+      // update message list every 2 seconds
       setInterval(function() {
         $("#update").load(location.href+"&t="+1*new Date()+" #update>*","");
-        $("#topic-polls").load(location.href+"&t="+1*new Date()+" #topic-polls>*","");
       }, 2000);
+      // update poll results every 5 seconds
+      setInterval(function() {
+        $("#topic-polls").load(location.href+"&t="+1*new Date()+" #topic-polls>*","");
+      }, 5000);
     
       $(".submit").click(function() {
 

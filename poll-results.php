@@ -125,7 +125,7 @@ include('_top.php');
     
       setInterval(function() {
         $("#results").load(location.href+"&t="+1*new Date()+" #results>*","");
-      }, 2000);
+      }, 3000);
     
       
     });
